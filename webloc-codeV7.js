@@ -1,4 +1,4 @@
-var location2, suburb, service, size, furnished, tenant, timeline, rent, persona, home, properties, contact;
+var location2, Suburb, service, size, furnished, tenant, timeline, rent, persona, home, properties, contact;
 
 
 var we_tabs_next_button = '[bloc=next-question]';
@@ -62,9 +62,9 @@ var we_tabs_next_button = '[bloc=next-question]';
       $(tab).addClass("w--tab-active");
       $(tab_link).siblings("a").removeClass("w--current");
       $(tab_link).addClass("w--current");
-    }$("[name=suburb]").on("input", function () {
-    suburb = getValueFromInput("suburb");
-      if (suburb != null) {
+    }$("[name=Suburb]").on("input", function () {
+    Suburb = getValueFromInput("Suburb");
+      if (Suburb != null) {
 
         nextTab = 'service';
         we_activeTab = $(".w--tab-active").attr("data-w-tab");
@@ -86,10 +86,10 @@ var we_tabs_next_button = '[bloc=next-question]';
         }
 });
 
-    $("[name=suburb]").parent("label.w-radio").on("click", function () {
+    $("[name=Suburb]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      suburb = getValueFromInput("suburb");
-        if (suburb != null) {
+      Suburb = getValueFromInput("Suburb");
+        if (Suburb != null) {
 
         nextTab = 'service';
         we_activeTab = $(".w--tab-active").attr("data-w-tab");
