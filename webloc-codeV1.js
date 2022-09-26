@@ -1,4 +1,3 @@
-<script>
 // Paste code here
 var service, size, furnished, tenant;
 
@@ -196,5 +195,3 @@ var we_tabs_next_button = '[bloc=next-question]';
       $($('[data-w-tab=tenant]')).attr('prev-tab',we_activeTab);
 
       });
-
-</script>
