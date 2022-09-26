@@ -1,4 +1,4 @@
-var service, size, furnished, tenant, timeline, rent, persona, home, properties, contact;
+var location2, service, size, furnished, tenant, timeline, rent, persona, home, properties, contact;
 
 
 var we_tabs_next_button = '[bloc=next-question]';
@@ -7,7 +7,7 @@ var we_tabs_next_button = '[bloc=next-question]';
 
     var we_activeTab,we_indexOfActiveTab, we_indexOfNextTab, we_indexOfPrevTab, we_prevTab, we_amountOfTabs, nextTab;
 
-    var tabList = ['service'];
+    var tabList = ['location2'];
 
     openTab(tabList[0]);
 
@@ -62,7 +62,55 @@ var we_tabs_next_button = '[bloc=next-question]';
       $(tab).addClass("w--tab-active");
       $(tab_link).siblings("a").removeClass("w--current");
       $(tab_link).addClass("w--current");
-    }$("[name=service]").on("input", function () {
+    }$("[name=location2]").on("input", function () {
+    location2 = getValueFromInput("location2");
+      if (location2 != null) {
+
+        nextTab = 'service';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=service]')).attr('prev-tab',we_activeTab);
+
+        }
+});
+
+    $("[name=location2]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      location2 = getValueFromInput("location2");
+        if (location2 != null) {
+
+        nextTab = 'service';
+        we_activeTab = $(".w--tab-active").attr("data-w-tab");
+        we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+        we_indexOfNextTab = we_indexOfActiveTab + 1;
+        we_indexOfPrevTab = we_indexOfActiveTab - 1;
+        we_prevTab = tabList[we_indexOfPrevTab];
+        we_amountOfTabs = tabList.length;
+
+        if (we_indexOfNextTab < we_amountOfTabs) {
+          tabList[we_indexOfNextTab] = nextTab;
+        } else {
+          tabList.push(nextTab);
+        }
+        $(we_tabs_next_button).addClass(we_tabs_active_class);
+        $(".w--tab-active").attr('next-tab',nextTab);
+        $($('[data-w-tab=service]')).attr('prev-tab',we_activeTab);
+
+        }
+});
+    $("[name=service]").on("input", function () {
     service = getValueFromInput("service");
 
       nextTab = 'size';
