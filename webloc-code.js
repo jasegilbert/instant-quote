@@ -1,9 +1,3 @@
-<!-- 1. Open Webflow project or page settings -->
-<!-- 2. Go to "Before </body> tag" -->
-<!-- 3. Paste library and script tag -->
-<!-- 4. Paste generated code inside of script tag -->
-
-<script src="https://weblocks.io/library.js"></script>
 <script>
 // Paste code here
 var service, size, furnished, tenant;
