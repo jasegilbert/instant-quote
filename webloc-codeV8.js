@@ -1,4 +1,4 @@
-var location2, Suburb, service, size, furnished, tenant, timeline, rent, persona, home, properties, contact;
+var location2, Suburb, service, name2, type, size, furnished, tenant, timeline, rent, persona, home, properties, contact;
 
 
 var we_tabs_next_button = '[bloc=next-question]';
@@ -113,6 +113,94 @@ var we_tabs_next_button = '[bloc=next-question]';
     $("[name=service]").on("input", function () {
     service = getValueFromInput("service");
 
+      nextTab = 'name2';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=name2]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=service]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      service = getValueFromInput("service");
+
+      nextTab = 'name2';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=name2]')).attr('prev-tab',we_activeTab);
+
+      });
+    $("[name=name2]").on("input", function () {
+    name2 = getValueFromInput("name2");
+
+      nextTab = 'type';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=type]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=name2]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      name2 = getValueFromInput("name2");
+
+      nextTab = 'type';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=type]')).attr('prev-tab',we_activeTab);
+
+      });
+    $("[name=type]").on("input", function () {
+    type = getValueFromInput("type");
+
       nextTab = 'size';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
@@ -132,9 +220,9 @@ var we_tabs_next_button = '[bloc=next-question]';
 
       });
 
-    $("[name=service]").parent("label.w-radio").on("click", function () {
+    $("[name=type]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      service = getValueFromInput("service");
+      type = getValueFromInput("type");
 
       nextTab = 'size';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
