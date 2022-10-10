@@ -570,7 +570,10 @@ var we_tabs_next_button = '[bloc=next-question]';
       $(".w--tab-active").attr('next-tab',nextTab);
       $($('[data-w-tab=contact]')).attr('prev-tab',we_activeTab);
 
-      });
+      $('[bloc=meeting-summary]').css({
+    'Display':'none',
+  });
+});
 
     $("[name=properties]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
@@ -593,4 +596,7 @@ var we_tabs_next_button = '[bloc=next-question]';
       $(".w--tab-active").attr('next-tab',nextTab);
       $($('[data-w-tab=contact]')).attr('prev-tab',we_activeTab);
 
-      });
+      $('[bloc=meeting-summary]').css({
+    'Display':'none',
+  });
+});
