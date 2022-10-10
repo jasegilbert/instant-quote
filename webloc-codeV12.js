@@ -594,9 +594,3 @@ var we_tabs_next_button = '[bloc=next-question]';
       $($('[data-w-tab=contact]')).attr('prev-tab',we_activeTab);
 
       });
-    if($('.w--tab-active').attr('data-w-tab')=='contact') {
-        $('[bloc=submit-button]').css({
-    'display':'flex',
-  });
-
-    }
