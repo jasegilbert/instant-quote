@@ -596,7 +596,7 @@ var we_tabs_next_button = '[bloc=next-question]';
       });
     if($('.w--tab-active').attr('data-w-tab')=='contact') {
         $('[bloc=submit-button]').css({
-    'Display':'flex',
+    'display':'flex',
   });
 
     }
