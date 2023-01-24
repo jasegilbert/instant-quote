@@ -1,4 +1,4 @@
-var service, location2, Suburb, name2, type, size, furnished, tenant, timeline, rent, persona, home, properties, demo, contact;
+var location2, Suburb, name2, type, size, furnished, tenant, timeline, rent, persona, home, properties, demo, contact;
 
 
 var we_tabs_next_button = '[bloc=next-question]';
@@ -509,7 +509,7 @@ var we_tabs_next_button = '[bloc=next-question]';
     $("[name=properties]").on("input", function () {
     properties = getValueFromInput("properties");
 
-      nextTab = 'contact';
+      nextTab = 'demo';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -524,7 +524,7 @@ var we_tabs_next_button = '[bloc=next-question]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=contact]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=demo]')).attr('prev-tab',we_activeTab);
 
       });
 
@@ -532,7 +532,7 @@ var we_tabs_next_button = '[bloc=next-question]';
       clickedRadioButtonValue = $("input", this).val();
       properties = getValueFromInput("properties");
 
-      nextTab = 'contact';
+      nextTab = 'demo';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
       we_indexOfNextTab = we_indexOfActiveTab + 1;
@@ -547,7 +547,7 @@ var we_tabs_next_button = '[bloc=next-question]';
       }
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=contact]')).attr('prev-tab',we_activeTab);
+      $($('[data-w-tab=demo]')).attr('prev-tab',we_activeTab);
 
       });
     $("[name=demo]").on("input", function () {
@@ -592,50 +592,5 @@ var we_tabs_next_button = '[bloc=next-question]';
       $(we_tabs_next_button).addClass(we_tabs_active_class);
       $(".w--tab-active").attr('next-tab',nextTab);
       $($('[data-w-tab=contact]')).attr('prev-tab',we_activeTab);
-
-      });
-
-$("[name=service]").on("input", function () {
-    service = getValueFromInput("service");
-
-      nextTab = 'name2';
-      we_activeTab = $(".w--tab-active").attr("data-w-tab");
-      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
-      we_indexOfNextTab = we_indexOfActiveTab + 1;
-      we_indexOfPrevTab = we_indexOfActiveTab - 1;
-      we_prevTab = tabList[we_indexOfPrevTab];
-      we_amountOfTabs = tabList.length;
-
-      if (we_indexOfNextTab < we_amountOfTabs) {
-        tabList[we_indexOfNextTab] = nextTab;
-      } else {
-        tabList.push(nextTab);
-      }
-      $(we_tabs_next_button).addClass(we_tabs_active_class);
-      $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=name2]')).attr('prev-tab',we_activeTab);
-
-      });
-
-    $("[name=service]").parent("label.w-radio").on("click", function () {
-      clickedRadioButtonValue = $("input", this).val();
-      service = getValueFromInput("service");
-
-      nextTab = 'name2';
-      we_activeTab = $(".w--tab-active").attr("data-w-tab");
-      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
-      we_indexOfNextTab = we_indexOfActiveTab + 1;
-      we_indexOfPrevTab = we_indexOfActiveTab - 1;
-      we_prevTab = tabList[we_indexOfPrevTab];
-      we_amountOfTabs = tabList.length;
-
-      if (we_indexOfNextTab < we_amountOfTabs) {
-        tabList[we_indexOfNextTab] = nextTab;
-      } else {
-        tabList.push(nextTab);
-      }
-      $(we_tabs_next_button).addClass(we_tabs_active_class);
-      $(".w--tab-active").attr('next-tab',nextTab);
-      $($('[data-w-tab=name2]')).attr('prev-tab',we_activeTab);
 
       });
