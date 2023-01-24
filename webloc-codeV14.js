@@ -1,4 +1,4 @@
-var service, location2, Suburb, name2, type, size, furnished, tenant, timeline, rent, persona, home, properties, contact;
+var service, location2, Suburb, name2, type, size, furnished, tenant, timeline, rent, persona, home, properties, demo, contact;
 
 
 var we_tabs_next_button = '[bloc=next-question]';
@@ -509,6 +509,50 @@ var we_tabs_next_button = '[bloc=next-question]';
     $("[name=properties]").on("input", function () {
     properties = getValueFromInput("properties");
 
+      nextTab = 'demo';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=demo]')).attr('prev-tab',we_activeTab);
+
+      });
+
+    $("[name=properties]").parent("label.w-radio").on("click", function () {
+      clickedRadioButtonValue = $("input", this).val();
+      properties = getValueFromInput("properties");
+
+      nextTab = 'demo';
+      we_activeTab = $(".w--tab-active").attr("data-w-tab");
+      we_indexOfActiveTab = tabList.indexOf(we_activeTab);
+      we_indexOfNextTab = we_indexOfActiveTab + 1;
+      we_indexOfPrevTab = we_indexOfActiveTab - 1;
+      we_prevTab = tabList[we_indexOfPrevTab];
+      we_amountOfTabs = tabList.length;
+
+      if (we_indexOfNextTab < we_amountOfTabs) {
+        tabList[we_indexOfNextTab] = nextTab;
+      } else {
+        tabList.push(nextTab);
+      }
+      $(we_tabs_next_button).addClass(we_tabs_active_class);
+      $(".w--tab-active").attr('next-tab',nextTab);
+      $($('[data-w-tab=demo]')).attr('prev-tab',we_activeTab);
+
+      });
+    $("[name=demo]").on("input", function () {
+    demo = getValueFromInput("demo");
+
       nextTab = 'contact';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
       we_indexOfActiveTab = tabList.indexOf(we_activeTab);
@@ -528,9 +572,9 @@ var we_tabs_next_button = '[bloc=next-question]';
 
       });
 
-    $("[name=properties]").parent("label.w-radio").on("click", function () {
+    $("[name=demo]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      properties = getValueFromInput("properties");
+      demo = getValueFromInput("demo");
 
       nextTab = 'contact';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
